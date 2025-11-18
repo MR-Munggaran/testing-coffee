@@ -21,12 +21,12 @@ class DistributorController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'distributor_name' => 'required|string|max:255',
-            'city' => 'required|string|max:255',
-            'state' => 'nullable|string|max:255',
-            'country' => 'nullable|string|max:255',
-            'phone' => 'nullable|string|max:50',
-            'email' => 'nullable|email|max:255',
+            'distributor_name' => 'required|string',
+            'city' => 'required|string',
+            'state' => 'nullable|string',
+            'country' => 'nullable|string',
+            'phone' => 'nullable|string',
+            'email' => 'nullable|email',
         ]);
 
         Distributor::create($request->all());
@@ -42,12 +42,12 @@ class DistributorController extends Controller
     public function update(Request $request, Distributor $distributor)
     {
         $request->validate([
-            'distributor_name' => 'required|string|max:255',
-            'city' => 'required|string|max:255',
-            'state' => 'nullable|string|max:255',
-            'country' => 'nullable|string|max:255',
-            'phone' => 'nullable|string|max:50',
-            'email' => 'nullable|email|max:255',
+            'distributor_name' => 'required|string',
+            'city' => 'required|string',
+            'state' => 'nullable|string',
+            'country' => 'nullable|string',
+            'phone' => 'nullable|string',
+            'email' => 'nullable|email',
         ]);
 
         $distributor->update($request->all());

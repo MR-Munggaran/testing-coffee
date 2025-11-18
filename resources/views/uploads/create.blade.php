@@ -80,44 +80,33 @@
             </ul>
         </div>
     @endif
-    <form action="{{ route('distributors.update', $distributor->id) }}" method="POST" style="margin-top: 1rem;">
-        @method('PUT')
+
+    @if (session('success'))
+        <div style="background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb; padding: 1rem; margin-bottom: 1.5rem; border-radius: 0.25rem;">
+            {{ session('success') }}
+        </div>
+    @endif
+    <form method="POST" action="{{ route('uploads.store') }}" enctype="multipart/form-data" style="margin-top: 1rem;">
         @csrf
-        <div>
-            <label>Distributor Name</label>
-            <input type="text" name="distributor_name" value="{{ old('distributor_name', $distributor->distributor_name) }}" style="margin-left: 1rem; margin-bottom: 1rem;">
+        <div style="display: flex; margin-bottom: 1rem; align-items: center;">
+            <label for="title" style="flex-basis: 120px;">Title</label>
+            <input type="text" name="title" id="title" value="{{ old('title') }}" style="margin-left: 0.5rem;">
         </div>
 
-        <div>
-            <label>City</label>
-            <input type="text" name="city" value="{{ old('city', $distributor->city) }}" style="margin-left: 1rem; margin-bottom: 1rem;">
+        <div style="display: flex; margin-bottom: 1rem; align-items: center;">
+            <label for="document_file">Document File</label>
+            <input type="file" name="document_file" id="document_file" style="margin-left: 0.5rem;">
+        </div>
+        
+
+        <div style="display: flex; margin-bottom: 1rem; align-items: center;">
+            <label for="author">Author</label>
+            <input type="text" name="author" id="author" value="{{ old('author') }}" style="margin-left: 0.5rem;">
         </div>
 
-        <div>
-            <label>State/Region</label>
-            <input type="text" name="state" value="{{ old('state', $distributor->state) }}" style="margin-left: 1rem; margin-bottom: 1rem;">
-        </div>
-
-        <div>
-            <label>Country</label>
-            <select name="country" style="margin-left: 1rem; margin-bottom: 1rem;">
-                <option value="Australia" {{ old('country', $distributor->country) == 'Australia' ? 'selected' : '' }}>Australia</option>
-                <option value="The Netherlands" {{ old('country', $distributor->country) == 'The Netherlands' ? 'selected' : '' }}>The Netherlands</option>
-                <option value="Germany" {{ old('country', $distributor->country) == 'Germany' ? 'selected' : '' }}>Germany</option>
-            </select>
-        </div>
-
-        <div>
-            <label>Phone</label>
-            <input type="text" name="phone" value="{{ old('phone', $distributor->phone) }}" style="margin-left: 1rem; margin-bottom: 1rem;">
-        </div>
-
-        <div>
-            <label>Email</label>
-            <input type="text" name="email" value="{{ old('email', $distributor->email) }}" style="margin-left: 1rem; margin-bottom: 1rem;">
-        </div>
-
-        <input type="submit" value="Update">
+        <button type="submit">Add Document</button>
+        
+        <p>There are currently no reports in the libary</p>
     </form>
     <p class="footer-date">November 18, 2025</p>
 </body>

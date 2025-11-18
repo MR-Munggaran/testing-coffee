@@ -68,7 +68,7 @@
         <li><a href="{{ route('catalog') }}">Catalog</a></li>
         <li><a href="#">Order Status</a></li>
         <li><a href="{{ route('distributors.index') }}">Distributors</a></li>
-        <li><a href="#">Upload</a></li>
+        <li><a href="{{ route('uploads.create') }}">Upload</a></li>
         <li><a href="{{ route('logout') }}">Logout</a></li>
     </ul>
     @if ($errors->any())
