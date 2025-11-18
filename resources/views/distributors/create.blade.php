@@ -55,7 +55,7 @@
 </head>
 <body>
     <div class="header">
-        <img src="Untitled.png" alt="logo">
+        <img src="{{asset('Untitled.png')}}" alt="logo">
         <div class="text">
             <h1 style="color: maroon;">Coffee Valley</h1>
             <h2>Taste the love in every cup</h2>
@@ -80,45 +80,45 @@
             </ul>
         </div>
     @endif
-    <form action="{{ route('distributors.store') }}" method="POST">
+    <form action="{{ route('distributors.store') }}" method="POST" style="margin-top: 1rem;">
         @csrf
+
         <div>
             <label>Distributor Name</label>
-            <input type="text" name="distributor_name" value="{{ old('distributor_name', $distributor->distributor_name) }}">
+            <input type="text" name="distributor_name" value="{{ old('distributor_name') }}" style="margin-left: 1rem; margin-bottom: 1rem;">
         </div>
 
         <div>
             <label>City</label>
-            <input type="text" name="city" value="{{ old('city', $distributor->city) }}">
+            <input type="text" name="city" value="{{ old('city') }}" style="margin-left: 1rem; margin-bottom: 1rem;">
         </div>
 
         <div>
             <label>State/Region</label>
-            <input type="text" name="state" value="{{ old('state', $distributor->state) }}">
+            <input type="text" name="state" value="{{ old('state') }}" style="margin-left: 1rem; margin-bottom: 1rem;">
         </div>
 
         <div>
             <label>Country</label>
-            <select name="country">
-                <option value="Australia" {{ old('country', $distributor->country) == 'Australia' ? 'selected' : '' }}>Australia</option>
-                <option value="The Netherlands" {{ old('country', $distributor->country) == 'The Netherlands' ? 'selected' : '' }}>The Netherlands</option>
-                <option value="Germany" {{ old('country', $distributor->country) == 'Germany' ? 'selected' : '' }}>Germany</option>
+            <select name="country" style="margin-left: 1rem; margin-bottom: 1rem;">
+                <option value="Australia" {{ old('country') == 'Australia' ? 'selected' : '' }}>Australia</option>
+                <option value="The Netherlands" {{ old('country') == 'The Netherlands' ? 'selected' : '' }}>The Netherlands</option>
+                <option value="Germany" {{ old('country') == 'Germany' ? 'selected' : '' }}>Germany</option>
             </select>
         </div>
 
         <div>
             <label>Phone</label>
-            <input type="text" name="phone" value="{{ old('phone', $distributor->phone) }}">
+            <input type="text" name="phone" value="{{ old('phone') }}" style="margin-left: 1rem; margin-bottom: 1rem;">
         </div>
 
         <div>
             <label>Email</label>
-            <input type="text" name="email" value="{{ old('email', $distributor->email) }}">
+            <input type="text" name="email" value="{{ old('email') }}" style="margin-left: 1rem; margin-bottom: 1rem;">
         </div>
 
-        <input type="submit" value="Update">
+        <input type="submit" value="Add">
     </form>
-    <a href="#">Add</a>
     <p class="footer-date">February 25, 2008</p>
 </body>
 </html>

@@ -68,7 +68,7 @@
 </head>
 <body>
     <div class="header">
-        <img src="Untitled.png" alt="logo">
+        <img src="{{asset('Untitled.png')}}" alt="logo">
         <div class="text">
             <h1 style="color: maroon;">Coffee Valley</h1>
             <h2>Taste the love in every cup</h2>

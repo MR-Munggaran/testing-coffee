@@ -55,7 +55,7 @@
 </head>
 <body>
     <div class="header">
-        <img src="Untitled.png" alt="logo">
+        <img src="{{asset('Untitled.png')}}" alt="logo">
         <div class="text">
             <h1 style="color: maroon;">Coffee Valley</h1>
             <h2>Taste the love in every cup</h2>
@@ -73,32 +73,19 @@
     </ul>
     <table>
         <tr>
-        <th>Distributor Name</th>
-        <th>City</th>
-        <th></th>
+            <th>Distributor Name</th>
+            <th>City</th>
+            <th>Actions</th>
         </tr>
-        <tr>
-        <td>Beans R Us</td>
-        <td>Brisbane</td>
-        <td><a href="#">Edit</a></td>
+        @foreach ($distributors as $distributor)
+        <tr @if($loop->first) class="red" @endif>
+            <td>{{ $distributor->distributor_name }}</td>
+            <td>{{ $distributor->city }}</td>
+            <td><a href="{{ route('distributors.edit', $distributor->id) }}">Edit</a></td>
         </tr>
-        <tr>
-        <td>The Buzz</td>
-        <td>Munich</td>
-        <td><a href="#">Edit</a></td>
-        </tr>
-        <tr class="red">
-        <td>Coffee Galore</td>
-        <td>Capelle aan den IJssel</td>
-        <td><a href="#">Edit</a></td>
-        </tr>
-        <tr>
-        <td>Perk Plus</td>
-        <td>Salem</td>
-        <td><a href="#">Edit</a></td>
-        </tr>
+        @endforeach
     </table>
-    <a href="#">Add</a>
+    <a href="{{ route('distributors.create') }}">Add</a>
     <p class="footer-date">February 25, 2008</p>
 </body>
 </html>
