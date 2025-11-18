@@ -34,11 +34,6 @@ class DistributorController extends Controller
         return redirect()->route('distributors.index')->with('success', 'Distributor created successfully.');
     }
 
-    public function show(Distributor $distributor)
-    {
-        return view('distributors.show', compact('distributor'));
-    }
-
     public function edit(Distributor $distributor)
     {
         return view('distributors.edit', compact('distributor'));

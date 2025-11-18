@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BeansController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\DistributorController;
 
 Route::get('/beans', [BeansController::class, 'index'])->name('catalog')->middleware('auth');
 Route::get('/', [BeansController::class, 'showFirst'])->name('home')->middleware('auth');
