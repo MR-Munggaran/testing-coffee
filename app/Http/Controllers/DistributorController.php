@@ -31,7 +31,7 @@ class DistributorController extends Controller
 
         Distributor::create($request->all());
 
-        return redirect()->route('distributors.index')->with('success', 'Distributor created successfully.');
+        return redirect()->route('distributors.index')->with('success', 'Berhasil');
     }
 
     public function edit(Distributor $distributor)
@@ -52,6 +52,6 @@ class DistributorController extends Controller
 
         $distributor->update($request->all());
 
-        return redirect()->route('distributors.index')->with('success', 'Distributor updated successfully.');
+        return redirect()->route('distributors.index')->with('success', 'Berhasil');
     }
 }

@@ -96,6 +96,6 @@
     @endforeach
     </table>
 
-    <p class="footer-date">February 25, 2008</p>
+    <p class="footer-date">November 18, 2025</p>
 </body>
 </html>
